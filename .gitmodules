@@ -4,3 +4,6 @@
 [submodule "vendor/assets/javascripts/jquery.ex-flex-fixed"]
 	path = vendor/assets/javascripts/jquery.ex-flex-fixed
 	url = https://github.com/cyokodog/jquery.ex-flex-fixed.git
+[submodule "vendor/assets/stylesheets/bootstrap"]
+	path = vendor/assets/stylesheets/bootstrap
+	url = https://github.com/twbs/bootstrap.git
