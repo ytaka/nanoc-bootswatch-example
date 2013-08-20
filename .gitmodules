@@ -1,0 +1,6 @@
+[submodule "vendor/nanoc_lftp_deploy"]
+	path = vendor/nanoc_lftp_deploy
+	url = https://github.com/ykanda/nanoc_lftp_deploy.git
+[submodule "vendor/assets/javascripts/jquery.ex-flex-fixed"]
+	path = vendor/assets/javascripts/jquery.ex-flex-fixed
+	url = https://github.com/cyokodog/jquery.ex-flex-fixed.git
