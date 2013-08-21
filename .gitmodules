@@ -7,3 +7,6 @@
 [submodule "vendor/assets/stylesheets/bootstrap"]
 	path = vendor/assets/stylesheets/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "vendor/assets/stylesheets/bootswatch"]
+	path = vendor/assets/stylesheets/bootswatch
+	url = https://github.com/thomaspark/bootswatch
