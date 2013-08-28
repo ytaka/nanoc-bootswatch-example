@@ -1,0 +1,6 @@
+@import "../../../vendor/assets/stylesheets/bootstrap/less/bootstrap.less";
+<% path_variable_less = "../../../vendor/assets/stylesheets/bootswatch/#{Nanoc::Site.new('.').config[:bootswatch][:theme]}/variables.less" %>
+<% if File.exist?(path_variable_less) %>
+@import <%= path_variable_less %>;
+<% end %>
+@import "../../../vendor/assets/stylesheets/bootswatch/assets/less/bootswatch.less";
