@@ -11,5 +11,5 @@ include Nanoc::Helpers::Sprockets
 Nanoc::Helpers::Sprockets.configure do |config|
   config.environment = Nanoc::Filters::Sprockets.environment
   config.prefix      = "/assets"
-  config.digest      = true
+  config.digest      = false
 end
