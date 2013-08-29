@@ -1,3 +1,25 @@
-%hr
 %footer
-  %p &copy; nanoc-bootswatch-example 2013
+  .row
+    .col-lg-12
+      %ul.list-unstyled
+        %li.pull-right
+          %a{:href => "#top"} Back to top
+        %li
+          %a{ :href => "https://github.com/ytaka/nanoc-bootswatch-example" } Repository
+        %li
+          %a{ :href => "http://getbootstrap.com/", :target => "_blank" } Bootstrap
+        %li
+          %a{ :href => "http://bootswatch.com/", :target => "_blank" } Bootswatch
+      %p
+        Based on
+        %a{ :href => "http://getbootstrap.com" }
+          Bootstrap
+        and
+        = succeed "." do
+          %a{ :href => "http://bootswatch.com/" }
+            Bootswatch
+      %p
+        Sidebar is controlled by
+        = succeed "." do
+          %a{:href => "https://github.com/cyokodog/jquery.ex-flex-fixed"}
+            jquery.ex-flex-fixed
