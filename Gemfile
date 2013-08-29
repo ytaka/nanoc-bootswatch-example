@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem "nanoc"
+gem "rake"
 gem "adsf"
 gem "kramdown"
 gem "haml"
