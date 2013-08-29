@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    = render("_html_header")
+  %body
+    .navbar.navbar-default.navbar-fixed-top
+      = render("_navbar")
+    .container#container-main-sidebar
+      .row#main-content#left-of-sidebar
+        .col-xs-12.col-sm-12.col-md-8
+          #main
+            = yield
+        .col-xs-12.col-sm-12.col-md-4
+          #sidebar
+            = render("_sidebar")
+    .container
+      #footer
+        %footer
+          %p &copy; Company 2013
