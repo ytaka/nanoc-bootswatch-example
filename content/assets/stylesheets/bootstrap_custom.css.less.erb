@@ -1,6 +1,14 @@
 @import "../../../vendor/assets/stylesheets/bootstrap/less/bootstrap.less";
-<% path_variable_less = "../../../vendor/assets/stylesheets/bootswatch/#{Nanoc::Site.new('.').config[:bootswatch][:theme]}/variables.less" %>
+
+<% file_dir = File.expand_path(File.dirname(__FILE__)) %>
+<% bootswatch_variables_less = "#{Nanoc::Site.new('.').config[:bootswatch][:theme]}/variables.less" %>
+<% path_variable_less = File.join(file_dir, "../../../vendor/assets/stylesheets/bootswatch", bootswatch_variables_less) %>
 <% if File.exist?(path_variable_less) %>
-@import <%= path_variable_less %>;
+@import "<%= File.join("../../../vendor/assets/stylesheets/bootswatch", bootswatch_variables_less) %>";
 <% end %>
+
 @import "../../../vendor/assets/stylesheets/bootswatch/assets/less/bootswatch.less";
+
+<% Dir.glob(File.join(file_dir, "bootstrap_custom/**/*.less")).each do |path| %>
+@import "<%= path.sub(/^#{file_dir}/, "") %>";
+<% end %>
