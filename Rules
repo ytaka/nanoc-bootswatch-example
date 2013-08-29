@@ -48,7 +48,7 @@ compile '*' do
     when /(^|\.)erb$/
       filter :erb
     end
-    layout 'default'
+    layout item[:layout] || "default"
   end
 end
 
