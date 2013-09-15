@@ -40,13 +40,15 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    case item[:extension]
-    when /(^|\.)md$/
-      filter :kramdown
-    when /(^|\.)haml$/
-      filter :haml
-    when /(^|\.)erb$/
-      filter :erb
+    item[:extension].split(".").reverse.each do |ext|
+      case ext
+      when /(^|\.)md$/
+        filter :kramdown
+      when /(^|\.)haml$/
+        filter :haml
+      when /(^|\.)erb$/
+        filter :erb
+      end
     end
     layout item[:layout] || "default"
   end
