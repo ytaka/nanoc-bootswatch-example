@@ -10,3 +10,6 @@
 [submodule "vendor/assets/stylesheets/bootswatch"]
 	path = vendor/assets/stylesheets/bootswatch
 	url = https://github.com/thomaspark/bootswatch
+[submodule "vendor/assets/javascripts/jquery"]
+	path = vendor/assets/javascripts/jquery
+	url = https://github.com/jquery/jquery.git
