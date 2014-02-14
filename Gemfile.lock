@@ -24,6 +24,8 @@ GEM
     multi_json (1.8.4)
     nanoc (3.6.7)
       cri (~> 2.3)
+    nanoc-gzip-filter (0.0.1)
+      nanoc (>= 3.4.0)
     nanoc-sprockets-filter (0.1.1)
       nanoc (>= 3.4.0)
       sprockets (>= 2.8.0)
@@ -68,6 +70,7 @@ DEPENDENCIES
   kramdown
   less
   nanoc
+  nanoc-gzip-filter
   nanoc-sprockets-filter
   rake
   sass
