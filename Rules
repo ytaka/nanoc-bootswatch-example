@@ -19,13 +19,19 @@ compile %r{/assets/(stylesheets|javascripts)/application.*} do
     :css_compressor => :sass,
     :js_compressor  => :uglifier
   }
+  snapshot :text
+  filter :gzip
 end
 
 compile %r{/assets/(stylesheets|javascripts)/.+} do
 end
 
-route %r{/assets/(stylesheets|javascripts)/application.*} do
+route %r{/assets/(stylesheets|javascripts)/application.*}, :snapshot => :text do
   Nanoc::Helpers::Sprockets.asset_path(item)
+end
+
+route %r{/assets/(stylesheets|javascripts)/application.*} do
+  Nanoc::Helpers::Sprockets.asset_path(item) + ".gz"
 end
 
 route %r{/assets/(stylesheets|javascripts)/.*} do

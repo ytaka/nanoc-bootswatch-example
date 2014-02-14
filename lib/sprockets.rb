@@ -5,6 +5,7 @@ require "sprockets-helpers"
 require "sprockets-sass"
 require "sprockets-less"
 require "nanoc-sprockets-filter"
+require "nanoc-gzip-filter"
 
 include Nanoc::Helpers::Sprockets
 
