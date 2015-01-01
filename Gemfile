@@ -7,7 +7,7 @@ gem "kramdown"
 gem "haml"
 gem "sass"
 gem "less"
-gem "therubyracer"
+gem "therubyracer", "0.12.0", platforms: :ruby
 gem "coffee-script"
 gem "uglifier"
 gem "w3c_validators"
