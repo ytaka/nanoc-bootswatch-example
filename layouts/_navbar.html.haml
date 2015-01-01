@@ -1,35 +1,36 @@
-.container
-  .navbar-header
-    %a.navbar-brand{ :href => "/" } nanoc-bootswatch-example
-    %button.navbar-toggle{ "data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button" }
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-  #navbar-main.navbar-collapse.collapse
-    %ul.nav.navbar-nav
-      %li.dropdown
-        %a#themes.dropdown-toggle{ "data-toggle" => "dropdown", :href => "#" }
-          Examples
-          %span.caret
-        %ul.dropdown-menu{ "aria-labelledby" => "themes" }
-          %li
-            %a{ :href => "/example/default/", :tabindex => "-1" } Default
-          %li.divider
-          %li
-            %a{ :href => "/example/sidebar/", :tabindex => "-1" } Sidebar
-      %li
-        %a{ :href => "https://github.com/ytaka/nanoc-bootswatch-example" } Repository
-      %li.dropdown
-        %a#download.dropdown-toggle{ "data-toggle" => "dropdown", :href => "#" }
-          Links
-          %span.caret
-        %ul.dropdown-menu{ "aria-labelledby" => "download" }
-          %li
-            %a{ :href => "./", :tabindex => "-1" } link 1
-          %li
-            %a{ :href => "./", :tabindex => "-1" } link 2
-    %ul.nav.navbar-nav.navbar-right
-      %li
-        %a{ :href => "http://getbootstrap.com/", :target => "_blank" } Bootstrap
-      %li
-        %a{ :href => "http://bootswatch.com/", :target => "_blank" } Bootswatch
+%div{ "class" => "navbar navbar-#{Nanoc::Site.new('.').config[:bootswatch][:navbar]} navbar-fixed-top" }
+  .container
+    .navbar-header
+      %a.navbar-brand{ :href => "/" } nanoc-bootswatch-example
+      %button.navbar-toggle{ "data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button" }
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.dropdown
+          %a#themes.dropdown-toggle{ "data-toggle" => "dropdown", :href => "#" }
+            Examples
+            %span.caret
+          %ul.dropdown-menu{ "aria-labelledby" => "themes" }
+            %li
+              %a{ :href => "/example/default/", :tabindex => "-1" } Default
+            %li.divider
+            %li
+              %a{ :href => "/example/sidebar/", :tabindex => "-1" } Sidebar
+        %li
+          %a{ :href => "https://github.com/ytaka/nanoc-bootswatch-example" } Repository
+        %li.dropdown
+          %a#download.dropdown-toggle{ "data-toggle" => "dropdown", :href => "#" }
+            Links
+            %span.caret
+          %ul.dropdown-menu{ "aria-labelledby" => "download" }
+            %li
+              %a{ :href => "./", :tabindex => "-1" } link 1
+            %li
+              %a{ :href => "./", :tabindex => "-1" } link 2
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{ :href => "http://getbootstrap.com/", :target => "_blank" } Bootstrap
+        %li
+          %a{ :href => "http://bootswatch.com/", :target => "_blank" } Bootswatch

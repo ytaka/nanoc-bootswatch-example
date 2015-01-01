@@ -78,4 +78,6 @@ watcher:
 
 bootswatch:
   theme:
-    "default"
+    "default"                   # Name of bootswatch thema
+  navbar:
+    "default"                   # "default" or "inverse"

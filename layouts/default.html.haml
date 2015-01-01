@@ -3,12 +3,8 @@
   %head
     = render("_html_header")
   %body#top
-    -# We can also use .navbar-inverse  instead of .navbar-default, which changes the color of navbar.
-    .navbar.navbar-default.navbar-fixed-top
-      = render("_navbar")
+    = render("_navbar")
     .container
       #main-content
         = yield
-    .container
-      #footer
-        = render("_footer")
+    = render("_footer")
