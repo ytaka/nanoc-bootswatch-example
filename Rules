@@ -17,7 +17,7 @@
 compile %r{/assets/(stylesheets|javascripts)/application.*} do
   filter :sprockets, {
     :css_compressor => :sass,
-    :js_compressor  => :uglifier
+    :js_compressor  => Uglifier.new(:comments => :copyright)
   }
   snapshot :text
   filter :gzip
