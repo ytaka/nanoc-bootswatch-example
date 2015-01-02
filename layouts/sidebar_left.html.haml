@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    = render("_html_header")
+  %body#top
+    = render("_navbar")
+    #container-main-sidebar.container
+      #main-content.row
+        .col-xs-12.col-sm-12.col-md-4
+          #sidebar
+            = render("_sidebar")
+        .col-xs-12.col-sm-12.col-md-8
+          #main
+            = yield
+    = render("_footer")
