@@ -14,11 +14,30 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile %r{/assets/(stylesheets|javascripts)/application.*} do
-  filter :sprockets, {
-    :css_compressor => :sass,
-    :js_compressor  => Uglifier.new(:comments => :copyright)
-  }
+# 
+# * Fri Jan  2 12:06:42 2015
+#   Compressor with sprockets filter of nanoc-sprockets3 does not work.
+#   Alternatively, we compress JS and CSS files by yuicompressor.
+# 
+# compile %r{/assets/(stylesheets|javascripts)/application.*} do
+#   filter :sprockets, {
+#     :css_compressor => :sass,
+#     :js_compressor  => Uglifier.new(:comments => :copyright)
+#   }
+#   snapshot :text
+#   filter :gzip
+# end
+
+compile %r{/assets/javascripts/application.*} do
+  filter :sprockets
+  filter :uglify_js
+  snapshot :text
+  filter :gzip
+end
+
+compile %r{/assets/stylesheets/application.*} do
+  filter :sprockets
+  filter :yui_compressor, :type => :css
   snapshot :text
   filter :gzip
 end
@@ -27,11 +46,11 @@ compile %r{/assets/(stylesheets|javascripts)/.+} do
 end
 
 route %r{/assets/(stylesheets|javascripts)/application.*}, :snapshot => :text do
-  Nanoc::Helpers::Sprockets.asset_path(item)
+  Nanoc::Sprockets::Helper.asset_path(item)
 end
 
 route %r{/assets/(stylesheets|javascripts)/application.*} do
-  Nanoc::Helpers::Sprockets.asset_path(item) + ".gz"
+  Nanoc::Sprockets::Helper.asset_path(item) + ".gz"
 end
 
 route %r{/assets/(stylesheets|javascripts)/.*} do
@@ -39,7 +58,7 @@ route %r{/assets/(stylesheets|javascripts)/.*} do
 end
 
 route %r{/assets/(images|fonts)/.*} do
-  Nanoc::Helpers::Sprockets.asset_path(item)
+  Nanoc::Sprockets::Helper.asset_path(item)
 end
 
 compile '*' do

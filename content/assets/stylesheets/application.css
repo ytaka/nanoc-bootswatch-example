@@ -1,4 +1,4 @@
 /*
-  = require bootstrap_custom
-  = require_self
-*/
+ *= require "bootstrap_custom"
+ *= require_self
+ */
